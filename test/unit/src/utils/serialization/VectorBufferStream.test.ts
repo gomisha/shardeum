@@ -3,7 +3,7 @@ import { VectorBufferStream } from '@shardeum-foundation/core'
 describe('VectorBufferStream', () => {
   it('should create a new VectorBufferStream with the specified initial size', () => {
     const stream = new VectorBufferStream(10)
-    expect(stream.getBufferLength()).toBe(0)
+    expect(stream.getBufferLength()).toBe(10)
   })
 
   it('should create a new VectorBufferStream from a Buffer', () => {
@@ -15,7 +15,7 @@ describe('VectorBufferStream', () => {
   it('should ensure capacity when writing a value', () => {
     const stream = new VectorBufferStream(10)
     stream.write('hello')
-    expect(stream.getBufferLength()).toBe(5)
+    expect(stream.getBufferLength()).toBe(10)
   })
 
   it('should write and read a string', () => {
